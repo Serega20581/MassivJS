@@ -1,0 +1,45 @@
+1.  Изменение элементов массива:
+const animals = ['cats', 'dogs', 'birds'];
+// Меняется первый элемент массива
+animals[0] = 'horses';
+console.log(animals); // => [ 'horses', 'dogs', 'birds' ]
+
+const animals = ['cats', 'dogs', 'birds'];
+// Меняем данные, а сам массив остался тем же
+// Такой код работает
+animals[2] = 'fish';
+console.log(animals); // => [ 'cats', 'dogs', 'fish' ]
+
+// Произойдет ошибка, так как здесь идет замена константы
+animals = ['fish', 'cats'];
+// Uncaught TypeError: Assignment to constant variable.
+
+2.  Добавление элемента в массив:
+Метод push() добавляет элемент в конец массива:
+
+const animals = ['cats', 'dogs', 'birds'];
+animals.push('horses');
+
+// массив animals изменен — стал больше
+console.log(animals); // => [ 'cats', 'dogs', 'birds', 'horses' ]
+
+// строка 'horses' была добавлена в конец массива (индекс = 3)
+console.log(animals[3]); // => 'horses'
+
+Метод unshift() добавляет элемент в начало массива:
+
+const animals = ['cats', 'dogs', 'birds'];
+animals.unshift('horses');
+
+// массив animals изменен — стал больше
+console.log(animals); // => [ 'horses', 'cats', 'dogs', 'birds' ]
+
+// строка 'horses' была добавлена в начало массива (индекс = 0)
+console.log(animals[0]); // => 'horses'
+3.  Удаление элемента из массива:
+Удалить элемент из массива можно с помощью специальной конструкции delete: delete arr[index].
+
+Пример:
+const animals = ['cats', 'dogs', 'birds'];
+delete animals[1]; // удаляем элемент под индексом 1
+console.log(animals); // => [ 'cats', <1 empty item>, 'birds' ]
