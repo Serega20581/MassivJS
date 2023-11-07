@@ -1,0 +1,9 @@
+const userNames = ['petya', 'vasya', 'evgeny'];
+
+// name на каждой итерации свой собственный (локальный), поэтому используется const
+for (const name of userNames) {
+  console.log(name);
+}
+// => "petya"
+// => "vasya"
+// => "evgeny"
